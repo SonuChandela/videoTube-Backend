@@ -142,31 +142,7 @@ const getLikedVideos = asyncHandler(async (req, res) => {
             }
         }
     ])
-    // const likedVideos = await Like.aggregate([
-    //     {
-    //         $match: {
-    //             likedBy: new mongoose.Types.ObjectId(req.user._id)
-    //         }
-    //     },
-    //     {
-    //         $unwind: '$videos'
-    //     },
-    //     {
-    //         $lookup: {
-    //             from: 'videos',
-    //             localField: 'videos',
-    //             foreignField: '_id',
-    //             as: 'videoDetails'
-    //         }
-    //     },
-    //     {
-    //         $project: {
-    //             _id: '$videos',
-    //             title: { $arrayElemAt: ['$videoDetails.title', 0] },
-    //             description: { $arrayElemAt: ['$videoDetails.description', 0] },
-    //         }
-    //     }
-    // ])
+
 
     return res
         .json(
